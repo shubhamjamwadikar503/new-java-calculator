@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'crud-app'
         DOCKER_TAG = "${BUILD_NUMBER}"
-//        DOCKERHUB_CREDENTIALS = 'dockerhub-credentials'
+        DOCKERHUB_CREDENTIALS = 'dockerhub-credentials'
     }
         
     stages {
@@ -31,16 +31,6 @@ pipeline {
                 '''
             }
         }
-        stage('Deploy Container') {
-            steps {
-                // Remove existing container (if any)
-                sh 'docker rm -f calculator || true'
-
-                // Run new container
-                sh 'docker run -d -p 8082:8080 --name calculator $DOCKER_IMAGE'
-            }
-        }
-/*        
         stage('Push to DockerHub') {
             steps {
                 echo 'Pushing Docker image to DockerHub...'
@@ -53,7 +43,17 @@ pipeline {
                 }
             }
         }
-*/
+        stage('Deploy Container') {
+            steps {
+                // Remove existing container (if any)
+                sh 'docker stop calculator || true'
+                sh 'docker rm -f calculator || true'
+
+                // Run new container
+                sh 'docker run -d -p 8082:8080 --name calculator $DOCKER_IMAGE'
+            }
+        }       
+
     }
     
 }
