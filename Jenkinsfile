@@ -52,7 +52,7 @@ pipeline {
                 sh '''
                     docker stop calculator || true
                     docker rm calculator || true
-                    docker rmi -f ${DOCKER_IMAGE} || true
+                    sudo docker image prune 
                     docker run -d -p 8082:8080 --name calculator ${DOCKER_IMAGE}:${DOCKER_TAG}
                 '''
             }
