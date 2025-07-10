@@ -37,7 +37,7 @@ pipeline {
                 sh 'docker rm -f calculator || true'
 
                 // Run new container
-                sh 'docker run -d -p 8080:8080 --name calculator $DOCKER_IMAGE'
+                sh 'docker run -d -p 8082:8080 --name calculator $DOCKER_IMAGE'
             }
         }
 /*        
