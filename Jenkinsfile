@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_IMAGE = '/crud-app'
+        DOCKER_IMAGE = 'crud-app'
         DOCKER_TAG = "${BUILD_NUMBER}"
 //        DOCKERHUB_CREDENTIALS = 'dockerhub-credentials'
     }
