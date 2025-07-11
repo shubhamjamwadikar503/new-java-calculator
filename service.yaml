@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: calculator-service
 spec:
-  type: ClusterIP
   selector:
     app: calculator
+  type: NodePort
   ports:
-  - protocol: TCP
-    port: 8080
-    targetPort: 8080
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30082  # Exposes your app on EC2 IP:30082
