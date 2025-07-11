@@ -51,7 +51,7 @@ pipeline {
                 withEnv(['KUBECONFIG=/var/lib/jenkins/.kube/config']) {
 
                 sh '''
-                    kubectl delete deployment calculator --ignore-not-found
+                    kubectl delete deployment calculator-deployment --ignore-not-found
                     kubectl delete service calculator-service --ignore-not-found
                     kubectl apply -f ./deployment.yaml
                     kubectl apply -f ./service.yaml
