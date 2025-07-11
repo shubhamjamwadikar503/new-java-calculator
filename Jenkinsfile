@@ -45,7 +45,7 @@ pipeline {
                 }
             }
         }
-*/
+/*
         stage('Deploy Container') {
             steps {
                 echo 'Deploying Docker container...'
@@ -57,7 +57,7 @@ pipeline {
                 '''
             }
         }
-/*
+*/
         stage('Deploy to Minikube') {
             steps {
                 echo 'Deploying to Minikube...'
