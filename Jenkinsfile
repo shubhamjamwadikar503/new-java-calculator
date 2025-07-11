@@ -52,8 +52,9 @@ pipeline {
 
                 sh '''
                     kubectl delete deployment calculator --ignore-not-found
-                    kubectl create deployment calculator --image=${DOCKER_IMAGE}:${DOCKER_TAG}
-                    kubectl expose deployment calculator --type=NodePort --port=8080 --target-port=8080 --name=calculator-service --dry-run=client -o yaml | kubectl apply -f -
+                    kubectl delete service calculator-service --ignore-not-found
+                    kubectl apply -f ./deployement.yaml
+                    kubectl apply -f ./service.yaml
                 '''
             }
             }
