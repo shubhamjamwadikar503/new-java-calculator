@@ -48,12 +48,14 @@ pipeline {
         stage('Deploy to Minikube') {
             steps {
                 echo 'Deploying to Minikube...'
+                withEnv(['KUBECONFIG=/var/lib/jenkins/.kube/config']) {
 
                 sh '''
                     kubectl delete deployment calculator --ignore-not-found
                     kubectl create deployment calculator --image=${DOCKER_IMAGE}:${DOCKER_TAG}
                     kubectl expose deployment calculator --type=NodePort --port=8080 --target-port=8080 --name=calculator-service --dry-run=client -o yaml | kubectl apply -f -
                 '''
+            }
             }
         }
 
