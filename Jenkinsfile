@@ -53,7 +53,7 @@ pipeline {
                 sh '''
                     kubectl delete deployment calculator --ignore-not-found
                     kubectl delete service calculator-service --ignore-not-found
-                    kubectl apply -f ./deployement.yaml
+                    kubectl apply -f ./deployment.yaml
                     kubectl apply -f ./service.yaml
                 '''
             }
