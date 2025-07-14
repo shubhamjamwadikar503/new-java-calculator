@@ -1,4 +1,4 @@
-# New-java-calculator
+# New-java-web-calculator
 
 # CI/CD Pipeline: GitHub → Jenkins → Docker → Minikube(Kubernetes)
 
