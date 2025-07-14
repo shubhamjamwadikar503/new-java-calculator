@@ -1,6 +1,6 @@
 # new-java-calculator
 
-# CI/CD Pipeline: GitHub → Jenkins → Docker → Minikube
+# CI/CD Pipeline: GitHub → Jenkins → Docker → Minikube(Kubernetes)
 
 This document provides step-by-step instructions to set up a complete CI/CD pipeline using:
 
