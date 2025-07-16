@@ -7,6 +7,7 @@ pipeline {
         DOCKER_TAG = "${BUILD_NUMBER}"
         DOCKERHUB_CREDENTIALS = 'dockerhub-credentials'     // Jenkins credentials ID
         KUBECONFIG = '/var/lib/jenkins/.kube/config'        // Path to kubeconfig
+        PATH = "/usr/local/bin:/usr/bin:/bin"
     }
 
     stages {
