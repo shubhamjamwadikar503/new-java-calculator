@@ -17,12 +17,12 @@ pipeline {
             }
         }
 
- #       stage('Build with Maven') {
- #          steps {
- #               echo 'Building project with Maven...'
- #               sh 'mvn clean install'
- #           }
- #       }
+ //       stage('Build with Maven') {
+ //          steps {
+ //               echo 'Building project with Maven...'
+ //               sh 'mvn clean install'
+ //           }
+ //       }
 
         stage('Build Docker Image') {
             steps {
