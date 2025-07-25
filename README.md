@@ -100,3 +100,8 @@ sudo chown -R jenkins:jenkins /var/lib/jenkins/.minikube
 
 After deploying application on Minikube, Need to do port-forward
 `kubectl port-forward --address 0.0.0.0 service/calculator-service 30082:8080`
+
+### 🧰 8. Web Calculator app
+
+<img width="814" height="425" alt="app" src="https://github.com/user-attachments/assets/ba8217dd-31b6-488e-aeb2-74e9803eff1a" />
+
